@@ -17,15 +17,15 @@ return [
 
     'paths' => ['api/*', 'storage/*'],
 
-    'allowed_methods' => ['GET, POST, OPTIONS'],
+    'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['https://testouchgold.com'],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['Origin, Content-Type, Accept, Authorization'],
+    'allowed_headers' => ['*'],
 
-    'exposed_headers' => [],
+    'exposed_headers' => false,
 
     'max_age' => 0,
 
