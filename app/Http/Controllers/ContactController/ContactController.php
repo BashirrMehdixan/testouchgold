@@ -19,7 +19,7 @@ class ContactController extends Controller
     public function store(ContactRequest $request)
     {
         try {
-            Mail::to('beshirr096@gmail.com')->send(new Contact($request->all()));
+            Mail::to('info@testouchgold.com')->send(new Contact($request->all()));
             return redirect()->back()->with('success', 'Message sent successfully');
         } catch (\Exception $e) {
             return redirect()->back()->withErrors($request)->withInput();
