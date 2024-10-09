@@ -9,12 +9,12 @@
                         <nav aria-label="breadcrumb">
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="/">
+                                    <a href="{{route('index')}}">
                                         <i class="fa fa-home"></i>
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    Gift cards
+                                    {{__('main.gift_cards')}}
                                 </li>
                             </ul>
                         </nav>
@@ -34,13 +34,13 @@
                         <!-- blog post item start -->
                         <div class="blog-post-item mb-30">
                             <figure class="blog-thumb">
-                                <a href="/gift-cards/{{$gift->slug}}">
+                                <a href="{{route('gift.show', ['slug' => $gift->slug])}}">
                                     <img src="{{ asset('storage/'.$gift->thumbnail) }}" alt="blog image">
                                 </a>
                             </figure>
                             <div class="blog-content">
                                 <h4 class="blog-title">
-                                    <a href="/gift-cards/{{$gift->slug}}">
+                                    <a href="{{route('gift.show', ['slug' => $gift->slug])}}">
                                         {{ $gift->name }}
                                     </a>
                                 </h4>

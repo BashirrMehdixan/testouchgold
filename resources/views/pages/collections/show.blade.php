@@ -9,10 +9,18 @@
                         <nav aria-label="breadcrumb">
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="{{route('index')}}"><i class="fa fa-home"></i>
+                                    <a href="{{route('index')}}">
+                                        <i class="fa fa-home"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item active" aria-current="page">Products</li>
+                                <li class="breadcrumb-item">
+                                    <a href="{{route('products.index')}}">
+                                        {{__('main.gold_jewelry')}}
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    {{$collection->name}}
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -31,7 +39,9 @@
                     <aside class="sidebar-wrapper">
                         <!-- single sidebar start -->
                         <div class="sidebar-single">
-                            <h5 class="sidebar-title">categories</h5>
+                            <h5 class="sidebar-title">
+                                {{__('main.categories')}}
+                            </h5>
                             <div class="sidebar-body">
                                 <ul class="shop-categories">
                                     @foreach($collections as $collection)
@@ -66,32 +76,8 @@
                                                     <i class="fa fa-list"></i>
                                                 </a>
                                             </div>
-                                            <!-- <div class="product-amount">-->
-                                            <!-- <p>Showing 1–16 of 21 results</p>-->
-                                            <!-- </div>-->
                                         </div>
                                     </div>
-                                    {{--                                <div class="col-lg-5 col-md-6 order-1 order-md-2">--}}
-                                    {{--                                    <div class="top-bar-right">--}}
-                                    {{--                                        <form method="GET" action="">--}}
-                                    {{--                                            <div class="product-short">--}}
-                                    {{--                                                <p>Sort By : </p>--}}
-                                    {{--                                                <select class="nice-select" name="sortby" onchange="this.form.submit()">--}}
-                                    {{--                                                    <option value="relevance" {% if sortOrder==--}}
-                                    {{--                                                    'relevance' %}selected{% endif %}>Relevance</option>--}}
-                                    {{--                                                    <option value="name_asc" {% if sortOrder==--}}
-                                    {{--                                                    'name_asc' %}selected{% endif %}>Name (A - Z)</option>--}}
-                                    {{--                                                    <option value="name_desc" {% if sortOrder==--}}
-                                    {{--                                                    'name_desc' %}selected{% endif %}>Name (Z - A)</option>--}}
-                                    {{--                                                    <option value="price_asc" {% if sortOrder==--}}
-                                    {{--                                                    'price_asc' %}selected{% endif %}>Price (Low > High)</option>--}}
-                                    {{--                                                    <option value="price_desc" {% if sortOrder==--}}
-                                    {{--                                                    'price_desc' %}selected{% endif %}>Price (High > Low)</option>--}}
-                                    {{--                                                </select>--}}
-                                    {{--                                            </div>--}}
-                                    {{--                                        </form>--}}
-                                    {{--                                    </div>--}}
-                                    {{--                                </div>--}}
                                 </div>
                             </div>
                             <!-- shop product top wrap start -->
@@ -101,29 +87,20 @@
                                 @foreach($productC as $product)
                                     <!-- product single item start -->
                                     <div class="col-md-4 col-sm-6">
-                                        <x-product-component :link="route('index')" :product="$product"/>
-                                        <x-product-list :link="route('index')" :product="$product"/>
+                                        <x-product-component :link="route('products.show', ['slug' => $product->slug])"
+                                                             :product="$product"/>
+                                        <x-product-list :link="route('products.show', ['slug' => $product->slug])" :product="$product"/>
                                     </div>
                                     <!-- product single item start -->
                                 @endforeach
                             </div>
                             <!-- product item list wrapper end -->
-
-                            <!-- start pagination area -->
-                            <!-- <div class="paginatoin-area text-center">-->
-                            <!--  <ul class="pagination-box">-->
-                            <!--  <li><a class="previous" href="#"><i class="pe-7s-angle-left"></i></a></li>-->
-                            <!--  <li class="active"><a href="#">1</a></li>-->
-                            <!--  <li><a href="#">2</a></li>-->
-                            <!--  <li><a href="#">3</a></li>-->
-                            <!--  <li><a class="next" href="#"><i class="pe-7s-angle-right"></i></a></li>-->
-                            <!--  </ul>-->
-                            <!--  </div>-->
-                            <!-- end pagination area -->
                         </div>
                     @else
                         <div class="section-title text-center">
-                            <h2 class="title">There's no products in this collection</h2>
+                            <h2 class="title">
+                                {{__('main.no_products')}}
+                            </h2>
                         </div>
                     @endif
                 </div>

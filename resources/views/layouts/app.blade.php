@@ -2,7 +2,7 @@
 <html lang="{{session('locale')}}">
 
 <head>
-{{--    @vite([])--}}
+    {{--    @vite([])--}}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Lara miss Home Page Two </title>
@@ -98,24 +98,24 @@
                                     <ul>
                                         <li>
                                             <a href="{{route('index')}}">
-                                                Home
+                                                {{__('main.home')}}
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{route('about')}}">
-                                                About
+                                                {{__('main.about')}}
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{route('products.index')}}">
-                                                Gold jewellery
+                                                {{__('main.gold_jewelry')}}
                                                 <i class="fa fa-angle-down {{$collections->count() < 0 ? 'd-none' : ""}}"></i>
                                             </a>
                                             @if($collections->count() > 0)
                                                 <ul class="dropdown">
                                                     @foreach($collections as $collection)
                                                         <li>
-                                                            <a href="/collections/{{$collection->slug}}">
+                                                            <a href="{{ route('collections.show', ['slug' => $collection->slug]) }}">
                                                                 {{$collection->name}}
                                                             </a>
                                                         </li>
@@ -125,14 +125,14 @@
                                         </li>
                                         <li>
                                             <a href="{{route('gold.index')}}">
-                                                Gold bar and gold coin
+                                                {{__('main.menu_goldbar')}}
                                                 <i class="fa fa-angle-down @if($goldBars->count() == 0) d-none @endif"></i>
                                             </a>
                                             @if($goldBars->count() > 0)
                                                 <ul class="dropdown">
                                                     @foreach($goldBars as $goldBar)
                                                         <li>
-                                                            <a href="/goldbar-and-goldcoin/{{$goldBar->slug}}">
+                                                            <a href="{{route('gold.items', ['slug' => $goldBar->slug])}}">
                                                                 {{$goldBar->name}}
                                                             </a>
                                                         </li>
@@ -142,14 +142,14 @@
                                         </li>
                                         <li>
                                             <a href="{{route('wedding-occasions.index')}}">
-                                                wedding occasions
+                                                {{__('main.wedding_occasions')}}
                                                 <i class="fa fa-angle-down @if($weddings->count() == 0) d-none @endif"></i>
                                             </a>
                                             @if($weddings->count() > 0)
                                                 <ul class="dropdown">
                                                     @foreach($weddings as $wedding)
                                                         <li>
-                                                            <a href="/wedding-occasions/{{$wedding->slug}}">
+                                                            <a href="{{route('wedding-occasions.items', ['slug' => $wedding->slug])}}">
                                                                 {{$wedding->name}}
                                                             </a>
                                                         </li>
@@ -159,7 +159,7 @@
                                         </li>
                                         <li>
                                             <a href="{{route('gift.index')}}">
-                                                gift cards
+                                                {{__('main.gift_cards')}}
                                                 <i class="fa fa-angle-down @if($giftCards->count() == 0) d-none @endif"></i>
                                             </a>
                                             <ul class="dropdown @if($giftCards->count() == 0) d-none @endif">
@@ -174,18 +174,9 @@
                                                 @endif
                                             </ul>
                                         </li>
-                                        <!--<li>-->
-                                        <!-- <a href="/special-offers">-->
-                                        <!--  special offers <i class="fa fa-angle-down"></i>-->
-                                        <!--  </a>-->
-                                        <!--                                            <ul class="dropdown">-->
-                                        <!--                                                <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>-->
-
-                                        <!--                                            </ul>-->
-                                        <!--                                        </li>-->
                                         <li>
                                             <a href="{{route('contact.index')}}">
-                                                Contact
+                                                {{__('main.contact')}}
                                             </a>
                                         </li>
                                     </ul>
@@ -231,9 +222,7 @@
         <!-- mobile header top start -->
     </div>
     <!-- mobile header end -->
-    <!-- mobile header end -->
 
-    <!-- offcanvas mobile menu start -->
     <!-- off-canvas menu start -->
     <aside class="off-canvas-wrapper">
         <div class="off-canvas-overlay"></div>
@@ -243,34 +232,30 @@
             </div>
 
             <div class="off-canvas-inner">
-                <!-- search box start -->
-                <!-- <div class="search-box-offcanvas">
-                    <form>
-                        <input type="text" placeholder="Search Here...">
-                        <button class="search-btn"><i class="pe-7s-search"></i></button>
-                    </form>
-                </div> -->
-                <!-- search box end -->
-
                 <!-- mobile menu start -->
                 <div class="mobile-navigation">
-
                     <!-- mobile menu navigation start -->
                     <nav>
                         <ul class="mobile-menu">
                             <li class="menu-item-has-children">
-                                <a href="{{route('index')}}">Home</a>
+                                <a href="{{route('index')}}">
+                                    {{__('main.home')}}
+                                </a>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="{{route('about')}}">About</a>
+                                <a href="{{route('about')}}">
+                                    {{__('main.about')}}
+                                </a>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="{{route('products.index')}}">Gold Jewellery</a>
+                                <a href="{{route('products.index')}}">
+                                    {{__('main.gold_jewelry')}}
+                                </a>
                                 @if($collections->count() > 0)
                                     <ul class="dropdown">
                                         @foreach($collections as $collection)
                                             <li>
-                                                <a href="/collections/{{$collection->slug}}">
+                                                <a href="{{route('collections.show', ["slug" => $collection->slug])}}">
                                                     {{$collection->name}}
                                                 </a>
                                             </li>
@@ -279,12 +264,14 @@
                                 @endif
                             </li>
                             <li class="menu-item-has-children ">
-                                <a href="{{route('gold.index')}}">Gold Bars and gold coins</a>
+                                <a href="{{route('gold.index')}}">
+                                    {{__('main.menu_goldbar')}}
+                                </a>
                                 @if($goldBars->count() > 0)
                                     <ul class="dropdown">
                                         @foreach($goldBars as $gold)
                                             <li>
-                                                <a href="{{route('gold.index').'/'.$gold->slug}}">
+                                                <a href="{{route('gold.items', ["slug" => $gold->slug])}}">
                                                     {{$gold->name}}
                                                 </a>
                                             </li>
@@ -293,12 +280,14 @@
                                 @endif
                             </li>
                             <li class="menu-item-has-children ">
-                                <a href="{{route('wedding-occasions.index')}}">wedding occasions</a>
+                                <a href="{{route('wedding-occasions.index')}}">
+                                    {{__('main.wedding_occasions')}}
+                                </a>
                                 @if($weddings->count() > 0)
                                     <ul class="dropdown">
                                         @foreach($weddings as $wedding)
                                             <li>
-                                                <a href="{{route('wedding-occasions.index').'/'.$wedding->slug}}">
+                                                <a href="{{route('wedding-occasions.items', ["slug" => $wedding->slug])}}">
                                                     {{$wedding->name}}
                                                 </a>
                                             </li>
@@ -307,12 +296,14 @@
                                 @endif
                             </li>
                             <li class="menu-item-has-children ">
-                                <a href="{{route('gift.index')}}">gift cards</a>
+                                <a href="{{route('gift.index')}}">
+                                    {{__('main.gift_cards')}}
+                                </a>
                                 @if($giftCards->count() > 0)
                                     <ul class="dropdown">
                                         @foreach($giftCards as $gift)
                                             <li>
-                                                <a href="{{route('gift.index').'/'.$gift->slug}}">
+                                                <a href="{{route('gift.show', ["slug" => $gift->slug])}}">
                                                     {{$gift->name}}
                                                 </a>
                                             </li>
@@ -321,7 +312,9 @@
                                 @endif
                             </li>
                             <li>
-                                <a href="{{route('contact.index')}}">Contact us</a>
+                                <a href="{{route('contact.index')}}">
+                                    {{__('main.contact')}}
+                                </a>
                             </li>
                         </ul>
                     </nav>
@@ -344,7 +337,7 @@
 <footer class="footer-widget-area">
     <div class="footer-top section-padding pb-3">
         <div class="container">
-            <div class="row">
+            <div class="row justify-between">
                 <div class="col-lg-3 col-md-6">
                     <div class="widget-item">
                         <div class="widget-title">
@@ -354,7 +347,6 @@
                                         <img src="{{asset('storage/'.$about->logo)}}" alt="">
                                     </a>
                                 </div>
-
                         </div>
                         <div class="widget-body">
                             <p>
@@ -368,7 +360,9 @@
                 @foreach($contacts as $contact)
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="widget-item">
-                            <h6 class="widget-title">Contact Us</h6>
+                            <h6 class="widget-title">
+                                {{__('main.contact_us')}}
+                            </h6>
                             <div class="widget-body">
                                 <address class="contact-block">
                                     <ul>
@@ -394,16 +388,38 @@
                         </div>
                     </div>
                 @endforeach
-                <div class="col-12 col-md-6 col-lg-3">
+                <div class="col-12 col-md-6 col-lg-4">
                     <div class="widget-item">
-                        <h6 class="widget-title">Information</h6>
+                        <h6 class="widget-title">
+                            {{__('main.information')}}
+                        </h6>
                         <div class="widget-body">
                             <ul class="info-list">
-                                <li><a href="{{route('about')}}">about us</a></li>
-                                <li><a href="{{route('products.index')}}">Gold Jewellery</a></li>
-                                <li><a href="{{route('gold.index')}}">Gold Bar and Gold Coin</a></li>
-                                <li><a href="{{route('wedding-occasions.index')}}">Wedding Occasions</a></li>
-                                <li><a href="{{route('contact.index')}}">contact us</a></li>
+                                <li>
+                                    <a href="{{route('about')}}">
+                                        {{__('main.about_us')}}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('products.index')}}">
+                                        {{__('main.menu_goldbar')}}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('gold.index')}}">
+                                        {{__('main.menu_goldbar')}}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('wedding-occasions.index')}}">
+                                        {{__('main.wedding_occasions')}}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('contact.index')}}">
+                                        {{__('main.contact_us')}}
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -413,7 +429,9 @@
                     @if($contact->instagram != null && $contact->facebook != null && $contact->twitter != null && $contact->youtube != null)
                         <div class="col-12 col-md-6 col-lg-3">
                             <div class="widget-item">
-                                <h6 class="widget-title">Follow Us</h6>
+                                <h6 class="widget-title">
+                                    {{ __('main.follow_us') }}
+                                </h6>
                                 <div class="widget-body social-link">
                                     <a href="{{$contact->facebook}}" class="@if($contact->facebook == null) d-none @endif">
                                         <i class="fa fa-facebook"></i>
@@ -432,7 +450,6 @@
                         </div>
                     @endif
                 @endforeach
-
             </div>
         </div>
     </div>

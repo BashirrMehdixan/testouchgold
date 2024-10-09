@@ -2,7 +2,7 @@
 <!-- product grid start -->
 <div class="product-item">
     <figure class="product-thumb">
-        <a href="{{ $link.'/products/'.$product->slug }}">
+        <a href="{{ $link }}">
             @if(count($product->image ?? []) > 1)
                 <img class="pri-img" src="{{asset('storage/'.$product->image[0])}}" alt="{{$product->name}}">
                 <img class="sec-img" src="{{asset('storage/'.$product->image[1])}}" alt="{{$product->name}}">
@@ -13,13 +13,8 @@
         </a>
     </figure>
     <div class="product-caption text-center">
-{{--         <div class="product-identity">--}}
-        {{--            <p class="manufacturer-name">--}}
-        {{--                 {{ $product->name.product_category }}--}}
-        {{--            </p>--}}
-        {{--         </div>--}}
         <h6 class="product-name">
-            <a href="{{ $link.'/products/'.$product->slug }}">{{ $product->name }}</a>
+            <a href="{{ $link }}">{{ $product->name }}</a>
         </h6>
         <div class="price-box">
             <span class="price-regular">

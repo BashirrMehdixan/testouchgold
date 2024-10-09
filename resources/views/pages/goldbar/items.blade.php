@@ -9,15 +9,18 @@
                         <nav aria-label="breadcrumb">
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="/"><i class="fa fa-home"></i>
+                                    <a href="{{route('index')}}">
+                                        <i class="fa fa-home"></i>
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">
                                     <a href="{{route('gold.index')}}">
-                                        Gold Bar and Gold Coin
+                                        {{__('main.menu_goldbar')}}
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ $goldCollection->name }}</li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    {{ $goldCollection->name }}
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -46,9 +49,6 @@
                                             <i class="fa fa-list"></i>
                                         </a>
                                     </div>
-                                    <!-- <div class="product-amount">-->
-                                    <!-- <p>Showing 1–16 of 21 results</p>-->
-                                    <!-- </div>-->
                                 </div>
                             </div>
                         </div>
@@ -61,8 +61,8 @@
                             @foreach($golds as $gold)
                                 <!-- product single item start -->
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <x-product-component :link="route('gold.index')" :product="$gold"/>
-                                    <x-product-list :link="route('gold.index')" :product="$gold"/>
+                                    <x-product-component :link="route('gold.show', ['slug' => $gold->slug])" :product="$gold"/>
+                                    <x-product-list :link="route('gold.show', ['slug' => $gold->slug])" :product="$gold"/>
                                 </div>
                                 <!-- product single item start -->
                             @endforeach

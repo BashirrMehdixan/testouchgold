@@ -16,7 +16,9 @@
                                         <h4 class="slide-desc" style="color: {{ $banner->description_color}}">
                                             {!! $banner->description !!}
                                         </h4>
-                                        <a href="/{{$banner->slug}}" class="btn btn-hero">Read More</a>
+                                        <a href="/{{$banner->slug}}" class="btn btn-hero">
+                                            {{__('main.read_more')}}
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -36,8 +38,9 @@
                 <div class="col-12">
                     <!-- section title start -->
                     <div class="section-title text-center">
-                        <h2 class="title">featured products</h2>
-                        <p class="sub-title">Add featured products to weekly lineup</p>
+                        <h2 class="title">
+                            {{__('main.featured_products')}}
+                        </h2>
                     </div>
                     <!-- section title start -->
                 </div>
@@ -47,12 +50,12 @@
                     @if($products->count() > 0)
                         <div class="product-carousel-4_2 slick-row-10 slick-arrow-style">
                             @foreach($products as $product)
-                                <x-product-component :link="route('index')" :product="$product"/>
+                                <x-product-component :link="route('products.show', ['slug' => $product->slug])" :product="$product"/>
                             @endforeach
                         </div>
                     @else
                         <div class="py-2 fs-2 text-center">
-                            There's no products
+                            {{__('main.no_products')}}
                         </div>
                     @endif
                 </div>
@@ -68,7 +71,9 @@
                 <div class="col-12">
                     <!-- section title start -->
                     <div class="section-title text-center">
-                        <h2 class="title">Our Collections</h2>
+                        <h2 class="title">
+                            {{__('main.our_collections')}}
+                        </h2>
                     </div>
                     <!-- section title start -->
                 </div>
@@ -81,12 +86,12 @@
                                 <!-- banner single slide start -->
                                 <div class="banner-slide-item">
                                     <figure class="banner-statistics">
-                                        <a href="/collections/{{$collection->slug}}">
+                                        <a href="{{route('collections.show', ['slug' => $collection->slug])}}">
                                             <img src="{{ asset('storage/'.$collection->thumbnail) }}" alt="{{ $collection->name }}">
                                         </a>
                                         <div class="banner-content banner-content_style2">
                                             <h5 class="banner-text3">
-                                                <a href="/collections/{{$collection->slug}}">{{ $collection->name }}</a>
+                                                <a href="{{route('collections.show', ['slug' => $collection->slug])}}">{{ $collection->name }}</a>
                                             </h5>
                                         </div>
                                     </figure>
@@ -96,7 +101,7 @@
                         </div>
                     @else
                         <div class="py-3 fs-2 text-center">
-                            There are no collections available.
+                            {{__('main.no_products')}}
                         </div>
                     @endif
                 </div>
@@ -111,8 +116,9 @@
                 <div class="col-12">
                     <!-- section title start -->
                     <div class="section-title text-center">
-                        <h2 class="title">our products</h2>
-                        <p class="sub-title">Add our products to weekly lineup</p>
+                        <h2 class="title">
+                            {{__('main.our_products')}}
+                        </h2>
                     </div>
                     <!-- section title start -->
                 </div>
@@ -125,7 +131,7 @@
                             <div class="tab-pane fade show active" id="tab1">
                                 <div class="product-carousel-4 slick-row-10 slick-arrow-style">
                                     @foreach($products as $product)
-                                        <x-product-component :link="route('index')" :product="$product"/>
+                                        <x-product-component :link="route('products.show', ['slug' => $product->slug])" :product="$product"/>
                                     @endforeach
                                 </div>
                             </div>
@@ -145,7 +151,9 @@
                 <div class="col-12">
                     <!-- section title start -->
                     <div class="section-title text-center">
-                        <h2 class="title">Wedding Occasions</h2>
+                        <h2 class="title">
+                            {{__('main.wedding_occasions')}}
+                        </h2>
                     </div>
                     <!-- section title start -->
                 </div>
@@ -158,12 +166,12 @@
                                 <!-- banner single slide start -->
                                 <div class="banner-slide-item">
                                     <figure class="banner-statistics">
-                                        <a href="/collections/{{$wedding->slug}}">
+                                        <a href="{{route('collections.show', ['slug' => $collection->slug])}}">
                                             <img src="{{ asset('storage/'.$wedding->thumbnail) }}" alt="{{ $wedding->name }}">
                                         </a>
                                         <div class="banner-content banner-content_style2">
                                             <h5 class="banner-text3">
-                                                <a href="/collections/{{$wedding->slug}}">{{ $wedding->name }}</a>
+                                                <a href="{{route('collections.show', ['slug' => $collection->slug])}}">{{ $wedding->name }}</a>
                                             </h5>
                                         </div>
                                     </figure>
@@ -173,7 +181,7 @@
                         </div>
                     @else
                         <div class="py-3 fs-2 text-center">
-                            There are no collections available.
+                            {{__('main.no_products')}}
                         </div>
                     @endif
                 </div>
@@ -195,7 +203,9 @@
                         </div>
                         <div class="col-lg-7">
                             <div class="about-content">
-                                <h2 class="about-title">About Us</h2>
+                                <h2 class="about-title">
+                                    {{__('main.about_us')}}
+                                </h2>
                                 <h5 class="about-sub-title">
                                     {{ $about->title }}
                                 </h5>

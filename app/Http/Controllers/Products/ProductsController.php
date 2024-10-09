@@ -29,6 +29,6 @@ class ProductsController extends Controller
         $productC = Product::where('collection_id', $collection->id)
             ->where('status', 1)
             ->get();
-        return view('pages.collections.show', compact('collections', 'productC'));
+        return view('pages.collections.show', compact('collections', 'collection', 'productC'));
     }
 }

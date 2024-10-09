@@ -14,7 +14,7 @@
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    Wedding occasions
+                                    {{__('main.wedding_occasions')}}
                                 </li>
                             </ul>
                         </nav>
@@ -32,13 +32,13 @@
                         <!-- blog post item start -->
                         <div class="blog-post-item mb-30">
                             <figure class="blog-thumb">
-                                <a href="/wedding-occasions/{{$wedding->slug}}">
-                                <img src="{{ asset('storage/'.$wedding->thumbnail) }}" alt="{{$wedding->name}}">
+                                <a href="{{route('wedding-occasions.items', ['slug' => $wedding->slug])}}">
+                                    <img src="{{ asset('storage/'.$wedding->thumbnail) }}" alt="{{$wedding->name}}">
                                 </a>
                             </figure>
                             <div class="blog-content">
                                 <h4 class="blog-title">
-                                    <a href="/wedding-occasions/{{$wedding->slug}}">
+                                    <a href="{{route('wedding-occasions.items', ['slug' => $wedding->slug])}}">
                                         {{ $wedding->name }}
                                     </a>
                                 </h4>

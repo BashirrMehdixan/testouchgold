@@ -89,8 +89,9 @@
                 <div class="col-12">
                     <!-- section title start -->
                     <div class="section-title text-center">
-                        <h2 class="title">Related Products</h2>
-                        <p class="sub-title">Add related products to weekly lineup</p>
+                        <h2 class="title">
+                            {{__('main.related_products')}}
+                        </h2>
                     </div>
                     <!-- section title start -->
                 </div>
@@ -99,7 +100,7 @@
                 <div class="col-12">
                     <div class="product-carousel-4 slick-row-10 slick-arrow-style">
                         @foreach($goldBarsProducts as $gold)
-                            <x-product-component :link="route('gold.index')" :product="$gold"/>
+                            <x-product-component :link="route('gold.show', ['slug' => $gold->slug])" :product="$gold"/>
                         @endforeach
                     </div>
                 </div>

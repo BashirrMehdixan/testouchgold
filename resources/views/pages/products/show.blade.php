@@ -9,17 +9,17 @@
                         <nav aria-label="breadcrumb">
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="/">
+                                    <a href="{{route('index')}}">
                                         <i class="fa fa-home"></i>
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="/products">
-                                        Products
+                                    <a href="{{route('products.index')}}">
+                                        {{__('main.gold_jewelry')}}
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    {{ $product->name }}
+                                    {{$product->name}}
                                 </li>
                             </ul>
                         </nav>
@@ -85,8 +85,9 @@
                 <div class="col-12">
                     <!-- section title start -->
                     <div class="section-title text-center">
-                        <h2 class="title">Related Products</h2>
-                        <p class="sub-title">Add related products to weekly lineup</p>
+                        <h2 class="title">
+                            {{__('main.related_products')}}
+                        </h2>
                     </div>
                     <!-- section title start -->
                 </div>
@@ -95,7 +96,7 @@
                 <div class="col-12">
                     <div class="product-carousel-4 slick-row-10 slick-arrow-style">
                         @foreach($products as $product)
-                            <x-product-component :link="route('index')" :product="$product"/>
+                            <x-product-component :link="route('products.show', ['slug' => $product->slug])" :product="$product"/>
                         @endforeach
                     </div>
                 </div>

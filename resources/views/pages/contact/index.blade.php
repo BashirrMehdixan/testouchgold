@@ -9,11 +9,13 @@
                         <nav aria-label="breadcrumb">
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="{{route('contact.index')}}">
+                                    <a href="{{route('index')}}">
                                         <i class="fa fa-home"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item active" aria-current="page">contact us</li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    {{__('main.contact_us')}}
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -41,7 +43,9 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="contact-message">
-                        <h4 class="contact-title">Tell Us Your Project</h4>
+                        <h4 class="contact-title">
+                            {{__('main.tell_us')}}
+                        </h4>
                         @if(session('success'))
                             <div class="alert alert-success">
                                 {{ session('success') }}
@@ -60,32 +64,34 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="form-group mb-4">
-                                        <input name="name" placeholder="Name *" type="text">
+                                        <input name="name" placeholder="{{__('main.full_name')}} *" type="text">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="form-group mb-4">
-                                        <input name="phone" placeholder="Phone *" type="text">
+                                        <input name="phone" placeholder="{{__('main.phone')}} *" type="text">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="form-group mb-4">
-                                        <input name="email" placeholder="Email *" type="text">
+                                        <input name="email" placeholder="{{__('main.email')}} *" type="text">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="form-group mb-4">
-                                        <input name="subject" placeholder="Subject *" type="text">
+                                        <input name="subject" placeholder="{{__('main.subject')}} *" type="text">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="contact2-textarea">
                                         <div class="form-group mb-4">
-                                            <textarea placeholder="Message *" name="message" class="form-control2"></textarea>
+                                            <textarea placeholder="{{__('main.message')}} *" name="message" class="form-control2"></textarea>
                                         </div>
                                     </div>
                                     <div class="contact-btn">
-                                        <button class="btn btn-sqr" type="submit">Send Message</button>
+                                        <button class="btn btn-sqr" type="submit">
+                                            {{__('main.send_message')}}
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +100,9 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="contact-info">
-                        <h4 class="contact-title">Contact Us</h4>
+                        <h4 class="contact-title">
+                            {{__('main.contact_us')}}
+                        </h4>
                         @foreach($abouts as $about)
                             {!! $about->content !!}
                         @endforeach
@@ -102,7 +110,7 @@
                             @foreach($contacts as $contact)
                                 <li>
                                     <i class="fa fa-fax"></i>
-                                    Address : {{ $contact->address }}
+                                    {{__('main.address')}} : {{ $contact->address }}
                                 </li>
                                 <li>
                                     <i class="fa fa-phone"></i>
@@ -110,7 +118,7 @@
                                 </li>
                                 <li>
                                     <i class="fa fa-envelope-o"></i>
-                                    E-mail: {{ $contact->email }}
+                                    {{__('main.email')}}: {{ $contact->email }}
                                 </li>
                             @endforeach
                         </ul>

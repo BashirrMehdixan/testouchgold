@@ -15,7 +15,7 @@
                                 </li>
                                 <li class="breadcrumb-item">
                                     <a href="{{ route('wedding-occasions.index') }}">
-                                        Wedding Occasions
+                                        {{__('main.wedding_occasions')}}
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
@@ -57,10 +57,14 @@
 
                     <!-- product item list wrapper start -->
                     <div class="shop-product-wrap grid-view row mbn-30">
-                        @foreach($weddings as $wedding)
+                        @foreach($weddingC as $wedding)
                             <div class="col-lg-3 col-md-4 col-sm-6">
-                                <x-product-component :link="route('wedding-occasions.index')" :product="$wedding"/>
-                                <x-product-list :link="route('wedding-occasions.index')" :product="$wedding"/>
+                                <x-product-component
+                                    :link="route('wedding-occasions.show', ['slug' => $wedding->slug])"
+                                    :product="$wedding"/>
+                                <x-product-list
+                                    :link="route('wedding-occasions.show', ['slug' => $wedding->slug])"
+                                    :product="$wedding"/>
                             </div>
                         @endforeach
                     </div>

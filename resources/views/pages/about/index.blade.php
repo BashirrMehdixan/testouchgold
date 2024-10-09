@@ -12,7 +12,9 @@
                                         <i class="fa fa-home"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item active" aria-current="page">About</li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    {{__('main.about')}}
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -35,7 +37,9 @@
                     </div>
                     <div class="col-lg-7">
                         <div class="about-content">
-                            <h2 class="about-title">About Us</h2>
+                            <h2 class="about-title">
+                                {{__('main.about_us')}}
+                            </h2>
                             <h5 class="about-sub-title">
                                 {{ $about->title}}
                             </h5>

@@ -14,7 +14,7 @@
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    gold bars and gold coins
+                                    {{__('main.menu_goldbar')}}
                                 </li>
                             </ul>
                         </nav>
@@ -33,12 +33,12 @@
                     @foreach($goldBars as $gold)
                         <div class="col-12 col-md-6 col-lg-4">
                             <figure class="banner-statistics">
-                                <a href="/goldbar-and-goldcoin/{{$gold->slug}}">
+                                <a href="{{route('gold.items', ['slug' => $gold->slug])}}">
                                     <img src="{{ asset('storage/'.$gold->thumbnail) }}" alt="{{ $gold->name }}">
                                 </a>
                                 <div class="banner-content banner-content_style2">
                                     <h5 class="banner-text3">
-                                        <a href="/goldbar-and-goldcoin/{{$gold->slug}}">
+                                        <a href="{{route('gold.items', ['slug' => $gold->slug])}}">
                                             {{ $gold->name }}
                                         </a>
                                     </h5>
@@ -48,7 +48,9 @@
                     @endforeach
                 </div>
             @else
-                <h4 class="fs-1 text-center">There's no brand</h4>
+                <h4 class="fs-1 text-center">
+                    {{__('main.no_products')}}
+                </h4>
             @endif
         </div>
     </section>

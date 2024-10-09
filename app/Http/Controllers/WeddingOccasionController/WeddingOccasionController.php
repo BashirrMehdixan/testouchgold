@@ -18,8 +18,8 @@ class WeddingOccasionController extends Controller
     public function items($slug)
     {
         $wCollection = WeddingOccasion::all()->where('status', 1)->where('slug', $slug)->first();
-        $weddings = WeddingProduct::all()->where('wedding_occasion_id', $wCollection->id);
-        return view('pages.wedding.items', compact('wCollection', 'weddings'));
+        $weddingC = WeddingProduct::all()->where('wedding_occasion_id', $wCollection->id);
+        return view('pages.wedding.items', compact('wCollection', 'weddingC'));
     }
 
     public function show($slug)

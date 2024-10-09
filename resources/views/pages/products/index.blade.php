@@ -31,12 +31,14 @@
                     <aside class="sidebar-wrapper">
                         <!-- single sidebar start -->
                         <div class="sidebar-single">
-                            <h5 class="sidebar-title">categories</h5>
+                            <h5 class="sidebar-title">
+                                {{__('main.categories')}}
+                            </h5>
                             <div class="sidebar-body">
                                 <ul class="shop-categories">
                                     @foreach($collections as $collection)
                                         <li>
-                                            <a href="/collections/{{$collection->slug}}">
+                                            <a href="{{route('collections.show', ['slug' => $collection->slug])}}">
                                                 {{ $collection->name }}
                                             </a>
                                         </li>
@@ -99,8 +101,8 @@
                             @foreach($products as $product)
                                 <!-- product single item start -->
                                 <div class="col-md-4 col-sm-6">
-                                    <x-product-component :link="route('index')" :product="$product"/>
-                                    <x-product-list :link="route('index')" :product="$product"/>
+                                    <x-product-component :link="route('products.show', ['slug' => $product->slug])" :product="$product"/>
+                                    <x-product-list :link="route('products.show', ['slug' => $product->slug])" :product="$product"/>
                                 </div>
                                 <!-- product single item start -->
                             @endforeach

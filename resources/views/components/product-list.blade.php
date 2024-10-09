@@ -2,7 +2,7 @@
 <!-- product list item end -->
 <div class="product-list-item">
     <figure class="product-thumb">
-        <a href="{{ $link.'/'.$product->slug }}">
+        <a href="{{ $link }}">
             @if(count( $product->image ?? []) > 1 )
                 <img class="pri-img" src="{{ asset('storage/'.$product->image[0])}}" alt="{{$product->name }}">
                 <img class="sec-img" src="{{ asset('storage/'.$product->image[1])}}" alt="{{$product->name }}">
@@ -14,7 +14,7 @@
     </figure>
     <div class="product-content-list">
         <h5 class="product-name">
-            <a href="{{ $link.'/'.$product->slug }}">
+            <a href="{{ $link }}">
                 {{ $product->name }}
             </a>
         </h5>
