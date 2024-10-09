@@ -18,6 +18,11 @@
                                         {{__('main.gold_jewelry')}}
                                     </a>
                                 </li>
+                                <li class="breadcrumb-item">
+                                    <a href="{{route('collections.show', ['slug' => $product->collection->slug])}}">
+                                        {{$product->collection->name}}
+                                    </a>
+                                </li>
                                 <li class="breadcrumb-item active" aria-current="page">
                                     {{$product->name}}
                                 </li>

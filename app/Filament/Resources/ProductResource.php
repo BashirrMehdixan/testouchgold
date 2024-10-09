@@ -39,6 +39,8 @@ class ProductResource extends Resource
 
     protected static ?string $navigationLabel = 'Products';
 
+    protected static ?string $navigationParentItem = "Collections";
+
     protected static ?string $navigationIcon = 'heroicon-o-chart-pie';
 
     public static function form(Form $form): Form

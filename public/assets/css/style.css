@@ -3349,14 +3349,28 @@ textarea:focus {
 /*----- hot deals item start -----*/
 .hot-deals-item {
     border: 1px solid #c29958;
+    min-height: 420px;
     border-radius: 5px;
+}
+
+.hot-deals-item .product-thumb {
+    padding: 10px 0;
+}
+
+.hot-deals-item .product-thumb img,
+.hot-deals-item .product-thumb a {
+    height: 100%
+}
+
+.hot-deals-item .product-thumb img {
+    object-fit: contain;;
 }
 
 .hot-deals-item .product-caption {
     padding: 20px;
 }
 
-@media only screen and (max-width: 767.98px) {
+@media only screen and (max-width: 768px) {
     .hot-deals-item .product-caption {
         padding: 20px 10px;
     }

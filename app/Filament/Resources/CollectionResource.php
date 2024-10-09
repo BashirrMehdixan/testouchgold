@@ -32,7 +32,6 @@ class CollectionResource extends Resource
     use Translatable;
 
     protected static ?string $model = Collection::class;
-    protected static ?string $navigationParentItem = "Products";
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -58,7 +57,9 @@ class CollectionResource extends Resource
                         RichEditor::make('description')
                             ->columnSpan('full')
                             ->required(),
-                    ])->columnSpan(1),
+                    ])
+                    ->columns(2)
+                    ->columnSpan(2),
                 Section::make()->schema([
                     FileUpload::make('thumbnail')
                         ->columnSpan('full')
@@ -71,7 +72,7 @@ class CollectionResource extends Resource
                     ->default(true)
                 ])
                     ->columnSpan(1)
-            ])->columns(2);
+            ])->columns(3);
     }
 
     public static function table(Table $table): Table

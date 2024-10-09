@@ -30,7 +30,7 @@ class BrandResource extends Resource
     protected static ?string $model = Brand::class;
 
     protected static ?string $label = 'Brands';
-    protected static ?string $navigationParentItem = "Products";
+    protected static ?string $navigationParentItem = "Collections";
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 

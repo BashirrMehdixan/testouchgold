@@ -131,7 +131,8 @@
                             <div class="tab-pane fade show active" id="tab1">
                                 <div class="product-carousel-4 slick-row-10 slick-arrow-style">
                                     @foreach($products as $product)
-                                        <x-product-component :link="route('products.show', ['slug' => $product->slug])" :product="$product"/>
+                                        <x-product-component :link="route('products.show', ['slug' => $product->slug])"
+                                                             :product="$product"/>
                                     @endforeach
                                 </div>
                             </div>
@@ -190,34 +191,80 @@
     </section>
     <!-- product banner statistics area end -->
 
-    <!-- about us area start -->
-    <section class="about-us section-padding section-padding">
+    <!-- hot deals area start -->
+    <section class="hot-deals section-padding">
         <div class="container">
-            <div class="row align-items-center">
-                @if($abouts->count() > 0)
-                    @foreach($abouts as $about)
-                        <div class="col-lg-5">
-                            <div class="about-thumb">
-                                <img src="{{asset('storage/'.$about->image)}}" class="about-thumb" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="about-content">
-                                <h2 class="about-title">
-                                    {{__('main.about_us')}}
-                                </h2>
-                                <h5 class="about-sub-title">
-                                    {{ $about->title }}
-                                </h5>
-                                <p>
-                                    {!! $about->description !!}
+            <!-- section title start -->
+            <div class="section-title text-center">
+                <h2 class="title">
+                    {{__('main.menu_goldbar')}}
+                </h2>
+            </div>
+            <!-- section title start -->
+            <div class="deals-carousel-active slick-row-10 slick-arrow-style">
+                @foreach($goldProducts as $gold)
+                    <!-- hot deals item start -->
+                    <div class="hot-deals-item product-item">
+                        <figure class="product-thumb">
+                            <a href="{{route('gold.show', ['slug' => $gold->slug])}}">
+                                <img src="{{asset('storage/'.$gold->thumbnail[0])}}" alt="{{$gold->name}}">
+                            </a>
+                        </figure>
+                        <div class="product-caption text-center">
+                            <div class="product-identity">
+                                <p class="manufacturer-name">
+                                    <a href="{{route('gold.items', ['slug' => $gold->gold_bars->slug])}}">
+                                        {{$gold->gold_bars->name}}
+                                    </a>
                                 </p>
                             </div>
+                            <h6 class="product-name">
+                                <a href="{{route('gold.show', ['slug' => $gold->slug])}}">
+                                    {{$gold->name}}
+                                </a>
+                            </h6>
+                            <div class="price-box">
+                                <span class="price-regular">
+                                    AED {{$gold->price}}
+                                </span>
+                            </div>
                         </div>
-                    @endforeach
-                @endif
+                    </div>
+                    <!-- hot deals item end -->
+                @endforeach
             </div>
         </div>
     </section>
+    <!-- hot deals area end -->
+
+    <!-- about us area start -->
+    {{--    <section class="about-us section-padding section-padding">--}}
+    {{--        <div class="container">--}}
+    {{--            <div class="row align-items-center">--}}
+    {{--                @if($abouts->count() > 0)--}}
+    {{--                    @foreach($abouts as $about)--}}
+    {{--                        <div class="col-lg-5">--}}
+    {{--                            <div class="about-thumb">--}}
+    {{--                                <img src="{{asset('storage/'.$about->image)}}" class="about-thumb" alt="">--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+    {{--                        <div class="col-lg-7">--}}
+    {{--                            <div class="about-content">--}}
+    {{--                                <h2 class="about-title">--}}
+    {{--                                    {{__('main.about_us')}}--}}
+    {{--                                </h2>--}}
+    {{--                                <h5 class="about-sub-title">--}}
+    {{--                                    {{ $about->title }}--}}
+    {{--                                </h5>--}}
+    {{--                                <p>--}}
+    {{--                                    {!! $about->description !!}--}}
+    {{--                                </p>--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+    {{--                    @endforeach--}}
+    {{--                @endif--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </section>--}}
     <!-- about us area end -->
 @endsection

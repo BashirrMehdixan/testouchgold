@@ -9,13 +9,18 @@
                         <nav aria-label="breadcrumb">
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="/">
+                                    <a href="{{route('index')}}">
                                         <i class="fa fa-home"></i>
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">
                                     <a href="{{route('gold.index')}}">
-                                        Gold Bars and Gold Coins
+                                        {{__('main.menu_goldbar')}}
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="{{route('gold.items', ['slug' => $gold->gold_bars->slug])}}">
+                                        {{  $gold->gold_bars->name }}
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">

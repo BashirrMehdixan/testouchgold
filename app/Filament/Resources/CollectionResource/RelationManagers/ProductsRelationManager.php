@@ -5,6 +5,7 @@ namespace App\Filament\Resources\CollectionResource\RelationManagers;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -47,7 +48,7 @@ class ProductsRelationManager extends RelationManager
                             ->preload()
                             ->native(false)
                             ->searchable(),
-                        MarkdownEditor::make('description')
+                        RichEditor::make('description')
                             ->columnSpan('full'),
                         TextInput::make('price')
                             ->numeric()
@@ -77,7 +78,10 @@ class ProductsRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('name')
             ->columns([
-                ImageColumn::make('image'),
+                ImageColumn::make('image')
+                ->stacked()
+                ->limit(2)
+                ->limitedRemainingText('more images'),
                 TextColumn::make('name')
                     ->sortable()
                     ->searchable(),
