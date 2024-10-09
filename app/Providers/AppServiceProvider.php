@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
             $switch
                 ->locales([...Language::where('status', 1)->pluck('slug')]);
         });
-        $languages = Language::where("status", 1)->get();
+        $languages = Language::orderBy('order')->where("status", 1)->get();
         $collections = Collection::where("status", 1)->get();
         $weddings = WeddingOccasion::where("status", 1)->get();
         $giftCards = GiftCard::where("status", 1)->get();

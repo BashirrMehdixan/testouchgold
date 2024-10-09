@@ -53,7 +53,10 @@
                                 <ul class="dropdown-list @if($languages->count() <= 1) d-none @endif">
                                     @foreach($languages as $lang)
                                         <li>
-                                            <a href="@if($lang->slug == "en") / @else /{{$lang->slug}} @endif">
+                                            <a
+                                                href="@if($lang->slug == "en") / @else /{{$lang->slug}} @endif"
+                                                class="@if(session('locale') == $lang->slug) d-none @endif"
+                                            >
                                                 {{$lang->name}}
                                             </a>
                                         </li>

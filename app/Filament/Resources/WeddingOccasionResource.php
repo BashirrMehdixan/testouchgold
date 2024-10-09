@@ -60,7 +60,8 @@ class WeddingOccasionResource extends Resource
                         RichEditor::make('description')
                             ->columnSpan('full')
                             ->required(),
-                    ])->columnSpan(1),
+                    ])
+                    ->columnSpan(2),
                 Section::make()->schema([
                     FileUpload::make('thumbnail')
                         ->columnSpan('full')
@@ -71,7 +72,7 @@ class WeddingOccasionResource extends Resource
                     Toggle::make('status')
                 ])
                     ->columnSpan(1)
-            ])->columns(2);
+            ])->columns(3);
     }
 
     public static function table(Table $table): Table

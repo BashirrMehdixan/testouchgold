@@ -4,7 +4,6 @@ namespace App\Filament\Resources\CollectionResource\RelationManagers;
 
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
@@ -13,9 +12,9 @@ use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
-use Filament\Tables\Columns\CheckboxColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -60,14 +59,13 @@ class ProductsRelationManager extends RelationManager
                     ->columns(2),
                 Section::make()->schema([
                     FileUpload::make('image')
+                        ->panelLayout('grid')
+                        ->label('Product images')
                         ->image()
-                        ->label('Product image')
-                        ->directory('uploads/products'),
-                    FileUpload::make('gallery_images')
-                        ->label('Product gallery images')
-                        ->image()
+                        ->reorderable()
+                        ->imageEditor()
                         ->multiple()
-                        ->directory('uploads/products'),
+                        ->directory('uploads/images/products'),
                     Toggle::make('status')
                 ])->columnSpan(1)
             ])->columns(3);
@@ -79,9 +77,9 @@ class ProductsRelationManager extends RelationManager
             ->recordTitleAttribute('name')
             ->columns([
                 ImageColumn::make('image')
-                ->stacked()
-                ->limit(2)
-                ->limitedRemainingText('more images'),
+                    ->stacked()
+                    ->limit(2)
+                    ->limitedRemainingText('more images'),
                 TextColumn::make('name')
                     ->sortable()
                     ->searchable(),
@@ -94,7 +92,7 @@ class ProductsRelationManager extends RelationManager
                     sortable(),
                 ImageColumn::make('colleagues.gallery_images')
                     ->stacked(),
-                CheckboxColumn::make('status'),
+                ToggleColumn::make('status'),
                 TextColumn::make('created_at')
                     ->date()
                     ->sortable(),

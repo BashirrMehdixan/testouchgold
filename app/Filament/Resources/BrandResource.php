@@ -58,18 +58,21 @@ class BrandResource extends Resource
                             ->label(__('description'))
                             ->columnSpan('full')
                             ->required(),
-                    ])->columnSpan(1),
+                    ])
+                    ->columns(2)
+                    ->columnSpan(2),
                 Section::make()->schema([
                     FileUpload::make('thumbnail')
                         ->columnSpan('full')
-                        ->label('Collection image')
-                        ->disk('public')
+                        ->label(__('thumbnail'))
                         ->directory('uploads/images/brands')
                         ->required(),
                     Toggle::make('status')
+                        ->label(__('status'))
+                    ->default(true)
                 ])
                     ->columnSpan(1)
-            ])->columns(2);
+            ])->columns(3);
     }
 
     public static function table(Table $table): Table

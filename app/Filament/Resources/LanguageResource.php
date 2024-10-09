@@ -43,10 +43,12 @@ class LanguageResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('order')
+                    ->sortable(),
                 TextColumn::make('name'),
                 TextColumn::make('slug'),
                 ToggleColumn::make('status')
-            ])
+            ])->searchable()
             ->filters([
                 //
             ])
@@ -58,7 +60,9 @@ class LanguageResource extends Resource
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->reorderable('order')
+            ->defaultSort('order');
     }
 
     public static function getRelations(): array

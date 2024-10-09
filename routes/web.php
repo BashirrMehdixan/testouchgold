@@ -19,16 +19,15 @@ if (in_array($locale, Language::pluck('slug')->toArray())) {
     $locale = '';
 }
 
-Route::group(['prefix' => $locale, function ($locale = null) {
-    return $locale;
-}, 'where' => ['locale' => '[a-zA-Z]{2}'], 'middleware' => SetLocale::class], function () {
-    // Index
+Route::group(['prefix' => $locale, 'where' => ['locale' => '[a-zA-Z]{2}'], 'middleware' => SetLocale::class], function () {
+
     Route::get('/', [HomeController::class, 'index'])->name('index');
+
     Route::get('about', [AboutController::class, 'index'])->name('about');
+
     Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
     Route::post('/contact/apply', [ContactController::class, 'store'])->name('contact.send');
 
-    // Products route
     Route::get('products', [ProductsController::class, 'index'])->name('products.index');
     Route::get('products/{slug}', [ProductsController::class, 'show'])->name('products.show');
 
@@ -45,3 +44,4 @@ Route::group(['prefix' => $locale, function ($locale = null) {
 
     Route::get('collections/{slug}', [ProductsController::class, 'collections'])->name('collections.show');
 });
+

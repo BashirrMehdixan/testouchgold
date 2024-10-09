@@ -1,6 +1,34 @@
 {
-    "name": "Adı",
-    "description": "Açıqlama",
-    "thumbnail": "Şəkil",
-    "Brands": "Brendlər"
+    "name": "Name",
+    "title": "Title",
+    "description": "Description",
+    "thumbnail": "Thumbnail",
+    "image": "Image",
+    "new_banner": "New banner",
+    "new_collection": "New collection",
+    "new_category": "New category",
+    "Brands": "Brands",
+    "new_brand": "New brand",
+    "new_card": "New Card",
+    "new_product": "New product",
+    "new_user": "New user",
+    "new_item": "New item",
+    "new_lang": "New language",
+    "content": "Content",
+    "status": "Status",
+
+
+    "avatar": "Avatar",
+    "firstname": "Firstname",
+    "lastname": "Lastname",
+    "email": "Email",
+    "birthday": "Birthday",
+    "gender": "Gender",
+    "role": "Role",
+
+    "address": "Address",
+    "phone": "Phone",
+
+    "price": "Price",
+    "sale_price": "Sale price"
 }
