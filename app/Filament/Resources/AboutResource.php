@@ -43,7 +43,7 @@ class AboutResource extends Resource
                         RichEditor::make('content')
                             ->required(),
                     ])
-                    ->columnSpan(1),
+                    ->columnSpan(2),
                 Section::make()
                     ->schema([
                         FileUpload::make('image')
@@ -56,7 +56,8 @@ class AboutResource extends Resource
                             ->directory('uploads/logos'),
                     ])
                     ->columnSpan(1),
-            ]);
+            ])
+            ->columns(3);
     }
 
     public static function table(Table $table): Table

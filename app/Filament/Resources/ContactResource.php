@@ -36,7 +36,7 @@ class ContactResource extends Resource
                 TextInput::make('twitter'),
                 TextInput::make('youtube'),
 
-            ])->columns(2);
+            ])->columns(3);
     }
 
     public static function table(Table $table): Table
