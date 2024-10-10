@@ -134,7 +134,7 @@ img {
 }
 
 .bg-img {
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -2495,7 +2495,7 @@ textarea:focus {
 02. Slider area
 --------------------------*/
 .hero-slider-item {
-    height: 530px;
+    height: 610px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
