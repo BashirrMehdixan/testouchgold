@@ -60,17 +60,17 @@ class WeddingProductResource extends Resource
                         Select::make('wedding_occasion_id')
                             ->label('Wedding occasion')
                             ->relationship('wedding_occasion', 'name')
-                            ->columnSpan('full')
                             ->preload()
                             ->native(false)
                             ->searchable()
                             ->required(),
-                        Richeditor::make('description')
-                            ->columnSpan('full'),
                         TextInput::make('price')
                             ->numeric()
                             ->required(),
+                        Richeditor::make('description')
+                            ->columnSpan('full'),
                         TextInput::make('sale_price')
+                            ->hidden()
                             ->numeric(),
                     ])
                     ->columnSpan(2)

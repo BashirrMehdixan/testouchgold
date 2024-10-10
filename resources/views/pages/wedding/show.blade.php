@@ -104,7 +104,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="product-carousel-4 slick-row-10 slick-arrow-style">
-                        @foreach($weddings as $wedding)
+                        @foreach($weddingC as $wedding)
                             <x-product-component :link="route('wedding-occasions.index')" :product="$wedding"/>
                         @endforeach
                     </div>
