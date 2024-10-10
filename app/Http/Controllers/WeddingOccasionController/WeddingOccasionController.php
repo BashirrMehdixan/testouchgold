@@ -11,7 +11,7 @@ class WeddingOccasionController extends Controller
 {
     public function index()
     {
-        $weddingOccasions = WeddingOccasion::all();
+        $weddingOccasions = WeddingOccasion::all()->where('status', 1);
         return view('pages.wedding.index', compact('weddingOccasions'));
     }
 
@@ -27,6 +27,6 @@ class WeddingOccasionController extends Controller
 //        $weddingCollection = WeddingProduct::all()->where('status', 1)->where('slug', $slug)->first();
         $weddings = WeddingProduct::all()->where('status', 1);
         $weddingOccasion = WeddingProduct::all()->where('slug', $slug)->first();
-        return view('pages.wedding.show', compact('weddingOccasion','weddings'));
+        return view('pages.wedding.show', compact('weddingOccasion', 'weddings'));
     }
 }
