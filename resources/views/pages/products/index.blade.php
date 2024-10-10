@@ -9,10 +9,13 @@
                         <nav aria-label="breadcrumb">
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="{{route('index')}}"><i class="fa fa-home"></i>
+                                    <a href="{{route('index')}}">
+                                        <i class="fa fa-home"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item active" aria-current="page">Gold Jewellery</li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    {{__('main.gold_jewelry')}}
+                                </li>
                             </ul>
                         </nav>
                     </div>
