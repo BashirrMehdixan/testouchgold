@@ -19,7 +19,7 @@
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="{{  route('wedding-occasions.items', ['slug' => $weddings->wedding_occasion->slug]) }}">
+                                    <a href="{{  route('wedding-occasions.items', ['slug' => $weddingOccasion->wedding_occasion->slug]) }}">
                                         {{ $weddings->wedding_occasion->name }}
                                     </a>
                                 </li>
