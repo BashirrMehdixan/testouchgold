@@ -23,7 +23,7 @@
     <div class="header-top bg-gray">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
+                <div class="d-none d-lg-block col-lg-6">
                     <ul class="nav align-items-center gap-3">
                         @if($contacts->count() > 0)
                             @foreach($contacts as $contact)
