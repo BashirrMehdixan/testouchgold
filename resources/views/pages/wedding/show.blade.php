@@ -15,7 +15,7 @@
                                 </li>
                                 <li class="breadcrumb-item">
                                     <a href="{{  route('wedding-occasions.index') }}">
-                                        {{__('$weddingOccasion')}}
+                                        {{__('main.weddingOccasion')}}
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">
