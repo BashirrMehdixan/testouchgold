@@ -2,10 +2,12 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Imports\ProductImporter;
 use App\Filament\Resources\CollectionResource\RelationManagers\ProductsRelationManager;
 use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Models\Product;
+use EightyNine\ExcelImport\Tables\ExcelImportRelationshipAction;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
@@ -19,6 +21,7 @@ use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Filters\TernaryFilter;
+use Filament\Tables\Actions\ImportAction;
 use Illuminate\Support\Str;
 use Filament\Forms\Form;
 use Filament\Resources\Concerns\Translatable;
@@ -136,7 +139,8 @@ class ProductResource extends Resource
                 DeleteAction::make(),
             ])
             ->headerActions([
-                ExportAction::make()
+                ExportAction::make(),
+
             ])
             ->bulkActions([
                 BulkActionGroup::make([
@@ -149,7 +153,6 @@ class ProductResource extends Resource
     public static function getRelations(): array
     {
         return [
-            ProductsRelationManager::class,
         ];
     }
 

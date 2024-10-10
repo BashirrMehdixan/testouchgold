@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Products;
 
 use App\Http\Controllers\Controller;
+use App\Imports\ProductImport;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Collection;
 use App\Models\Product;
 use Illuminate\Http\Request;
