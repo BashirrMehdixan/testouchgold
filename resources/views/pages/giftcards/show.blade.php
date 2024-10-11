@@ -15,7 +15,7 @@
                                 </li>
                                 <li class="breadcrumb-item">
                                     <a href="{{route('gift.index')}}">
-                                        Gift cards
+                                        {{__('main.gift_cards')}}
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
@@ -36,7 +36,7 @@
                 <!-- blog post item start -->
                 <div class="blog-post-item blog-details-post">
                     <figure class="blog-thumb">
-                        <img src="{{$gift->thumbnail}}" alt="{{$gift->name}}">
+                        <img src="{{ asset('storage/'.$gift->thumbnail) }}" alt="{{$gift->name}}">
                     </figure>
                     <div class="blog-content">
                         <h3 class="blog-title">
