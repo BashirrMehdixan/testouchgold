@@ -32,7 +32,7 @@
     <div class="map-area section-padding">
         @foreach($contacts as $contact)
             @if($contact->map)
-                <iframe src="{{ $contact->map}}" width="600" height="450" style="border:0;" allowfullscreen="true"
+                <iframe src="{{ $contact->map}}" height="450" style="border:0;" allowfullscreen="true"
                         loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             @endif
