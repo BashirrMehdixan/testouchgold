@@ -352,7 +352,7 @@
 <footer class="footer-widget-area">
     <div class="footer-top section-padding pb-3">
         <div class="container">
-            <div class="row justify-between">
+            <div class="row align-items-center justify-between">
                 <div class="col-lg-3 col-md-6">
                     <div class="widget-item">
                         <div class="widget-title">
@@ -417,11 +417,6 @@
                                 </li>
                                 <li>
                                     <a href="{{route('products.index')}}">
-                                        {{__('main.menu_goldbar')}}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('gold.index')}}">
                                         {{__('main.menu_goldbar')}}
                                     </a>
                                 </li>
