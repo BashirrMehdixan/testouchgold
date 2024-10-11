@@ -45,12 +45,12 @@
                         <h3 class="blog-title">
                             {{ $gift->name }}
                         </h3>
-                        <div class="entry-summary">
+                        @if($gift->file)
                             @foreach($gift->file as $file)
-                            <iframe src="{{asset('storage/'.$file)}}" class="file-iframe">
-
-                            </iframe>
+                                <iframe src="{{asset('storage/'.$file)}}" class="file-iframe"></iframe>
                             @endforeach
+                        @endif
+                        <div class="entry-summary">
                             {!! $gift->description !!}
                         </div>
                     </div>
