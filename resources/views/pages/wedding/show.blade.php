@@ -1,4 +1,8 @@
 @extends('layouts.app')
+@section('title')
+    {{$weddingOccasion->name}}
+@endsection
+
 @section('content')
     <!-- breadcrumb area start -->
     <div class="breadcrumb-area">

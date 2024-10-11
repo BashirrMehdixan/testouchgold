@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    {{__('main.about_us')}}
+@endsection
 @section('content')
     <div class="breadcrumb-area">
         <div class="container">

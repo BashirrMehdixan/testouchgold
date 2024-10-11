@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    {{$product->name}}
+@endsection
 @section('content')
     <!-- breadcrumb area start -->
     <div class="breadcrumb-area">

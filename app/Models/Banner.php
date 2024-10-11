@@ -12,7 +12,7 @@ class Banner extends Model
     use HasTranslations;
 
     protected $fillable = [
-        "title", "title_color", "description", "description_color", "image", "slug",
+        "title", "title_color", "description", "description_color", "image", "slug", 'order'
     ];
 
     protected array $translatable = [

@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function index()
     {
         $products = Product::inRandomOrder()->where('status', 1)->get();
-        $banners = Banner::where('status', 1)->get();
+        $banners = Banner::orderBy('order')->where('status', 1)->get();
         $goldProducts = GoldBarsProducts::inRandomOrder()->where('status', 1)->get();
         return view('pages.index', compact('products', 'banners', 'goldProducts'));
     }

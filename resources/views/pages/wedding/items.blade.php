@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    {{$wCollection->name}}
+@endsection
 @section('content')
     <!-- breadcrumb area start -->
     <div class="breadcrumb-area">

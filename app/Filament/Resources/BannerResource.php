@@ -13,6 +13,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Concerns\Translatable;
+use Filament\Resources\Pages\CreateRecord;
 use Filament\Resources\Resource;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteAction;
@@ -60,7 +61,8 @@ class BannerResource extends Resource
                             ->default(true),
                     ])->columnSpan(1)
 
-            ])->columns(3);
+            ])
+            ->columns(3);
     }
 
     public static function table(Table $table): Table
@@ -84,7 +86,9 @@ class BannerResource extends Resource
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->reorderable('order')
+            ->defaultSort('order');
     }
 
     public static function getRelations(): array

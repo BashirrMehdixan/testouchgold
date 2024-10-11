@@ -5,10 +5,18 @@
         <a href="{{ $link }}">
             @if(count($product->image ?? []) > 1)
                 <img class="pri-img" src="{{asset('storage/'.$product->image[0])}}" alt="{{$product->name}}">
-                <img class="sec-img" src="{{asset('storage/'.$product->image[1])}}" alt="{{$product->name}}">
+                @if($product->image[1])
+                    <img class="sec-img" src="{{asset('storage/'.$product->image[1])}}" alt="{{$product->name}}">
+                @else
+                    <img class="pri-img" src="{{asset('storage/'.$product->image[0])}}" alt="{{$product->name}}">
+                @endif
             @else
                 <img class="pri-img" src="{{asset('storage/'.$product->thumbnail[0])}}" alt="{{$product->name}}">
-                <img class="sec-img" src="{{asset('storage/'.$product->thumbnail[1])}}" alt="{{$product->name}}">
+                @if($product->thumbnail[1])
+                    <img class="sec-img" src="{{asset('storage/'.$product->thumbnail[1])}}" alt="{{$product->name}}">
+                @else
+                    <img class="pri-img" src="{{asset('storage/'.$product->thumbnail[0])}}" alt="{{$product->name}}">
+                @endif
             @endif
         </a>
     </figure>

@@ -16,8 +16,10 @@ class GiftCard extends Model
         'slug',
         'description',
         'thumbnail',
+        'file',
         'status'
     ];
+    protected $casts = ['file' => 'array'];
 
     protected array $translatable = ['name', 'slug', 'description'];
 }

@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    {{__('main.contact_us')}}
+@endsection
 @section('content')
     <!-- breadcrumb area start -->
     <div class="breadcrumb-area">
@@ -85,7 +88,8 @@
                                 <div class="col-12">
                                     <div class="contact2-textarea">
                                         <div class="form-group mb-4">
-                                            <textarea placeholder="{{__('main.message')}} *" name="message" class="form-control2"></textarea>
+                                            <textarea placeholder="{{__('main.message')}} *" name="message"
+                                                      class="form-control2"></textarea>
                                         </div>
                                     </div>
                                     <div class="contact-btn">

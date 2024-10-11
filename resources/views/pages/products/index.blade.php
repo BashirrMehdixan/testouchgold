@@ -1,4 +1,8 @@
 @extends('layouts.app')
+@section('title')
+    {{__('main.gold_jewelry')}}
+@endsection
+
 @section('content')
     <!-- breadcrumb area start -->
     <div class="breadcrumb-area">

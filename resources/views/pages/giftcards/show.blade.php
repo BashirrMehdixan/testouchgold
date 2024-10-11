@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    {{$gift->name}}
+@endsection
 @section('content')
     <!-- breadcrumb area start -->
     <div class="breadcrumb-area">
@@ -43,6 +46,11 @@
                             {{ $gift->name }}
                         </h3>
                         <div class="entry-summary">
+                            @foreach($gift->file as $file)
+                            <iframe src="{{asset('storage/'.$file)}}" class="file-iframe">
+
+                            </iframe>
+                            @endforeach
                             {!! $gift->description !!}
                         </div>
                     </div>

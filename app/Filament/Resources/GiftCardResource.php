@@ -28,6 +28,7 @@ use Illuminate\Support\Str;
 class GiftCardResource extends Resource
 {
     use Translatable;
+
     protected static ?string $model = GiftCard::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-gift';
@@ -55,10 +56,13 @@ class GiftCardResource extends Resource
                         FileUpload::make('thumbnail')
                             ->image()
                             ->imageEditor(),
+                        FileUpload::make('file')
+                            ->multiple()
+                            ->acceptedFileTypes(['application/pdf']),
                         Toggle::make('status')
                             ->default(true)
                     ])
-                ->columnSpan(1)
+                    ->columnSpan(1)
             ])
             ->columns(4);
     }

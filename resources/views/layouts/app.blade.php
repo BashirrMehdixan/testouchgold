@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Lara miss Home Page Two </title>
+    <title> Testouch Gold | @yield('title', __('main.home')) </title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900" rel="stylesheet">
     <link rel="shortcut icon" href='{{asset("assets/img/logo/logo.png")}}' type="img/png"/>
     <link rel="stylesheet" href='{{asset("assets/css/vendor/bootstrap.min.css")}}'>

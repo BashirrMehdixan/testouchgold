@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    {{__('main.gift_cards')}}
+@endsection
 @section('content')
     <!-- breadcrumb area start -->
     <div class="breadcrumb-area">
