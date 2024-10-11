@@ -47,7 +47,7 @@
                 <div class="col-lg-6">
                     <div class="contact-message">
                         <h4 class="contact-title">
-                            {{__('main.tell_us')}}
+                            {{__('main.contact_us')}}
                         </h4>
                         @if(session('success'))
                             <div class="alert alert-success">
@@ -105,7 +105,7 @@
                 <div class="col-lg-6">
                     <div class="contact-info">
                         <h4 class="contact-title">
-                            {{__('main.contact_us')}}
+                            {{__('main.our_address')}}
                         </h4>
                         {!! $about->content !!}
                         <ul class="mt-4">

@@ -28,4 +28,5 @@ return [
     "message" => "Message",
     "send_message" => "Send Message",
     "address" => "Address",
+    "our_address" => "Our Address",
 ];

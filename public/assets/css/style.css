@@ -2495,7 +2495,7 @@ textarea:focus {
 02. Slider area
 --------------------------*/
 .hero-slider-item {
-    height: 610px;
+    height: 530px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6960,7 +6960,9 @@ blockquote {
 .copyright-text p a {
     color: #c29958;
 }
-
+iframe {
+    width: 100% !important;
+}
 .file-iframe {
     width: 100%;
 }
