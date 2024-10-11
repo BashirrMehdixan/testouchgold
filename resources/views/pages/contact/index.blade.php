@@ -28,20 +28,8 @@
     </div>
     <!-- breadcrumb area end -->
 
-    <!-- google map start -->
-    <div class="map-area section-padding">
-        @foreach($contacts as $contact)
-            @if($contact->map)
-                <iframe src="{{ $contact->map}}" height="450" style="border:0;" allowfullscreen="true"
-                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            @endif
-        @endforeach
-    </div>
-    <!-- google map end -->
-
     <!-- contact area start -->
-    <div class="contact-area section-padding pt-0">
+    <div class="contact-area section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -109,7 +97,7 @@
                         </h4>
                         {!! $about->content !!}
                         <ul class="mt-4">
-                            @foreach($contacts as $contact)
+                            @if(isset($contact))
                                 <li>
                                     <i class="fa fa-fax"></i>
                                     {{__('main.address')}} : {{ $contact->address }}
@@ -122,7 +110,7 @@
                                     <i class="fa fa-envelope-o"></i>
                                     {{__('main.email')}}: {{ $contact->email }}
                                 </li>
-                            @endforeach
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -130,4 +118,18 @@
         </div>
     </div>
     <!-- contact area end -->
+
+    <!-- google map start -->
+    <div class="map-area section-padding pt-0">
+        <div class="container">
+            @if(isset($contact))
+                @if($contact->map)
+                    <iframe src="{{ $contact->map}}" height="450" style="border:0;" allowfullscreen="true"
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                @endif
+            @endif
+        </div>
+    </div>
+    <!-- google map end -->
 @endsection

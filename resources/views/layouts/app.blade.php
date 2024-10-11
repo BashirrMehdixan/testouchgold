@@ -42,22 +42,20 @@
             <div class="row align-items-center">
                 <div class="d-none d-lg-block col-lg-6">
                     <ul class="nav align-items-center gap-3">
-                        @if($contacts->count() > 0)
-                            @foreach($contacts as $contact)
-                                <li class="current-wrap">
-                                    {{$contact->address}}
-                                </li>
-                                <li class="current-wrap">
-                                    <a href="tel:{{$contact->phone_number}}" class="text-dark">
-                                        {{$contact->phone_number}}
-                                    </a>
-                                </li>
-                                <li class="current-wrap">
-                                    <a href="mailto:" class="text-dark">
-                                        {{$contact->email}}
-                                    </a>
-                                </li>
-                            @endforeach
+                        @if(isset($contact))
+                            <li class="current-wrap">
+                                {{$contact->address}}
+                            </li>
+                            <li class="current-wrap">
+                                <a href="tel:{{$contact->phone_number}}" class="text-dark">
+                                    {{$contact->phone_number}}
+                                </a>
+                            </li>
+                            <li class="current-wrap">
+                                <a href="mailto:" class="text-dark">
+                                    {{$contact->email}}
+                                </a>
+                            </li>
                         @endif
                     </ul>
                 </div>
@@ -374,7 +372,7 @@
                     </div>
 
                 </div>
-                @foreach($contacts as $contact)
+                @if(isset($contact))
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="widget-item">
                             <h6 class="widget-title">
@@ -404,7 +402,7 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @endif
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="widget-item">
                         <h6 class="widget-title">
@@ -442,7 +440,7 @@
                     </div>
                 </div>
 
-                @foreach($contacts as $contact)
+                @if(isset($contact))
                     @if($contact->instagram != null && $contact->facebook != null && $contact->twitter != null && $contact->youtube != null)
                         <div class="col-12 col-md-6 col-lg-3">
                             <div class="widget-item">
@@ -466,7 +464,7 @@
                             </div>
                         </div>
                     @endif
-                @endforeach
+                @endif
             </div>
         </div>
     </div>

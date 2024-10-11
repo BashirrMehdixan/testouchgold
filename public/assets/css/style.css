@@ -1813,7 +1813,7 @@ textarea:focus {
 }
 
 .mobile-logo {
-    max-width: 140px;
+    max-width: 70px;
     width: 100%;
 }
 
@@ -6960,11 +6960,10 @@ blockquote {
 .copyright-text p a {
     color: #c29958;
 }
+
 iframe {
     width: 100% !important;
-}
-.file-iframe {
-    width: 100%;
+    border-radius: 10px;
 }
 
 /*----- footer area end -----*/
