@@ -31,8 +31,7 @@
     <section class="about-us section-padding">
         <div class="container">
             <div class="row align-items-center">
-                @foreach($abouts as $about)
-
+                @if(isset($about))
                     <div class="col-lg-5">
                         <div class="about-thumb">
                             <img src="{{ asset('storage/'.$about->image) }}" alt="about thumb">
@@ -51,7 +50,7 @@
                             </p>
                         </div>
                     </div>
-                @endforeach
+                @endif
             </div>
         </div>
     </section>

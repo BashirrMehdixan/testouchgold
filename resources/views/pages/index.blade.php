@@ -241,8 +241,7 @@
     {{--    <section class="about-us section-padding section-padding">--}}
     {{--        <div class="container">--}}
     {{--            <div class="row align-items-center">--}}
-    {{--                @if($abouts->count() > 0)--}}
-    {{--                    @foreach($abouts as $about)--}}
+    {{--                @if(isset($about)--}}
     {{--                        <div class="col-lg-5">--}}
     {{--                            <div class="about-thumb">--}}
     {{--                                <img src="{{asset('storage/'.$about->image)}}" class="about-thumb" alt="">--}}
@@ -261,7 +260,6 @@
     {{--                                </p>--}}
     {{--                            </div>--}}
     {{--                        </div>--}}
-    {{--                    @endforeach--}}
     {{--                @endif--}}
     {{--            </div>--}}
     {{--        </div>--}}

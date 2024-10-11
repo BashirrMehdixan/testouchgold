@@ -107,9 +107,7 @@
                         <h4 class="contact-title">
                             {{__('main.contact_us')}}
                         </h4>
-                        @foreach($abouts as $about)
-                            {!! $about->content !!}
-                        @endforeach
+                        {!! $about->content !!}
                         <ul class="mt-4">
                             @foreach($contacts as $contact)
                                 <li>

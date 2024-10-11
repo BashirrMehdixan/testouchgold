@@ -37,13 +37,13 @@ class AppServiceProvider extends ServiceProvider
         $giftCards = GiftCard::where("status", 1)->get();
         $goldBars = GoldBar::where('status', 1)->get();
         $contacts = Contact::all();
-        $abouts = About::all();
+        $about = About::first();
         view()->share('collections', $collections);
         view()->share('weddings', $weddings);
         view()->share('languages', $languages);
         view()->share('giftCards', $giftCards);
         view()->share('goldBars', $goldBars);
         view()->share('contacts', $contacts);
-        view()->share('abouts', $abouts);
+        view()->share('about', $about);
     }
 }
