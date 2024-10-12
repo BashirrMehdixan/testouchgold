@@ -9,20 +9,23 @@
     <link rel="icon" type="image/x-icon" size="32x32" href="{{ asset('storage/'.$about->favicon)}}">
     <link rel="shortcut icon" type="image/x-icon" size="48x48" href="{{ $about->favicon}}">
     <link rel="shortcut icon" type="image/x-icon" size="16x16" href="{{ $about->favicon}}">
-    <meta name="keywords" content="@foreach($seo->keywords as $keyword) {{$keyword}} @endforeach"/>
-    <meta name="description" content="{{$seo->description}}"/>
+    <meta name="keywords"
+          content="@foreach($seo->keywords as $keyword) {{$keyword}}, @endforeach @foreach($collections as $collection) {{$collection->name}} @endforeach"
+    />
+    <meta name="description" content="{!! $seo->description !!}"/>
     <meta name="author" content="Testouch Gold"/>
     <meta property="og:title" content="{{$seo->title}}"/>
-    <meta property="og:type" content="article"/>
     <meta property="og:url" content="{{ url()->current() }}"/>
     <meta property="og:image" content="{{asset('storage/'.$about->logo)}}"/>
     <meta property="og:site_name" content="{{ $about->title }}"/>
     <meta name="twitter:title" content="{{ $about->title }}"/>
     <meta name="twitter:description"
-          content="{{$seo->description}}"/>
+          content="{!! $seo->description !!}"/>
     <meta name="twitter:image" content="{{asset('storage/' . $about->logo)}}"/>
-    <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:image:alt" content="{{ $about->title}}"/>
+    <meta property="og:type" content="article"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
     <link rel="stylesheet" href='{{asset("assets/css/vendor/bootstrap.min.css")}}'>
     <link rel="stylesheet" href='{{asset("assets/css/vendor/pe-icon-7-stroke.css")}}'/>
     <link rel="stylesheet" href='{{asset("assets/css/vendor/font-awesome.min.css")}}'/>
