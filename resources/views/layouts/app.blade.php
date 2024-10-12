@@ -6,24 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Testouch Gold | @yield('title', __('main.home')) </title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" size="32x32" href="{{ asset("assets/logo.png")}}">
-    <meta name="keywords" content="gold, gold jewelery, gold bars, gold coins, rings, earrings"/>
-    <meta name="description"
-          content="At Testouch Gold, we specialize in offering an exquisite collection of high-quality diamonds, fine jewelry, gold bars, gold coins, and other precious metal items. With a passion for luxury and craftsmanship, we aim to provide our customers with timeless pieces that embody elegance and sophistication. Whether you are seeking a unique piece of jewelry for a special occasion or looking to invest in gold bars and coins, we are committed to delivering exceptional value and authenticity"/>
+    <link rel="icon" type="image/x-icon" size="32x32" href="{{ asset('storage/'.$about->favicon)}}">
+    <link rel="shortcut icon" type="image/x-icon" size="48x48" href="{{ $about->favicon}}">
+    <link rel="shortcut icon" type="image/x-icon" size="16x16" href="{{ $about->favicon}}">
+    <meta name="keywords" content="@foreach($seo->keywords as $keyword) {{$keyword}} @endforeach"/>
+    <meta name="description" content="{{$seo->description}}"/>
     <meta name="author" content="Testouch Gold"/>
-    <meta property="og:title" content="Testouch Gold"/>
+    <meta property="og:title" content="{{$seo->title}}"/>
     <meta property="og:type" content="article"/>
     <meta property="og:url" content="{{ url()->current() }}"/>
     <meta property="og:image" content="{{asset('storage/'.$about->logo)}}"/>
     <meta property="og:site_name" content="{{ $about->title }}"/>
     <meta name="twitter:title" content="{{ $about->title }}"/>
     <meta name="twitter:description"
-          content="At Testouch Gold, we specialize in offering an exquisite collection of high-quality diamonds, fine jewelry, gold bars, gold coins, and other precious metal items. With a passion for luxury and craftsmanship, we aim to provide our customers with timeless pieces that embody elegance and sophistication. Whether you are seeking a unique piece of jewelry for a special occasion or looking to invest in gold bars and coins, we are committed to delivering exceptional value and authenticity"/>
+          content="{{$seo->description}}"/>
     <meta name="twitter:image" content="{{asset('storage/' . $about->logo)}}"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:image:alt" content="{{ $about->title}}"/>
-    <link rel="shortcut icon" type="image/x-icon" size="48x48" href="{{ asset("assets/logo.png")}}">
-    <link rel="shortcut icon" type="image/x-icon" size="16x16" href="{{ asset("assets/logo.png")}}">
     <link rel="stylesheet" href='{{asset("assets/css/vendor/bootstrap.min.css")}}'>
     <link rel="stylesheet" href='{{asset("assets/css/vendor/pe-icon-7-stroke.css")}}'/>
     <link rel="stylesheet" href='{{asset("assets/css/vendor/font-awesome.min.css")}}'/>

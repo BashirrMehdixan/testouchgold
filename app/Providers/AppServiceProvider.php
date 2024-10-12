@@ -8,6 +8,7 @@ use App\Models\Contact;
 use App\Models\GiftCard;
 use App\Models\GoldBar;
 use App\Models\Language;
+use App\Models\Seo;
 use App\Models\WeddingOccasion;
 use BezhanSalleh\FilamentLanguageSwitch\LanguageSwitch;
 use Illuminate\Support\ServiceProvider;
@@ -38,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
         $goldBars = GoldBar::where('status', 1)->get();
         $contact = Contact::first();
         $about = About::first();
+        $seo = Seo::first();
         view()->share('collections', $collections);
         view()->share('weddings', $weddings);
         view()->share('languages', $languages);
@@ -45,5 +47,6 @@ class AppServiceProvider extends ServiceProvider
         view()->share('goldBars', $goldBars);
         view()->share('contact', $contact);
         view()->share('about', $about);
+        view()->share('seo', $seo);
     }
 }

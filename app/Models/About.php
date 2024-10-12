@@ -16,7 +16,8 @@ class About extends Model
         'description',
         'content',
         'image',
-        'logo'
+        'logo',
+        'favicon'
     ];
 
     public array $translatable = [

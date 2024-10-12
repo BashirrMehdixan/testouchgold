@@ -51,9 +51,16 @@ class AboutResource extends Resource
                             ->imageEditor()
                             ->directory('uploads/about'),
                         FileUpload::make('logo')
+                            ->required()
                             ->image()
                             ->imageEditor()
-                            ->directory('uploads/logos'),
+                            ->directory('uploads/images'),
+                        FileUpload::make('favicon')
+                            ->required()
+                            ->image()
+                            ->imageEditor()
+                            ->directory('uploads/images')
+                        ,
                     ])
                     ->columnSpan(1),
             ])
