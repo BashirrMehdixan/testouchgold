@@ -5,6 +5,7 @@ namespace App\Providers\Filament;
 use App\Filament\Resources\ProductResource\Widgets\ProductWidget;
 
 //use App\Models\Language;
+use App\Models\About;
 use App\Models\Language;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -27,13 +28,14 @@ class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
+        $about = About::first();
         return $panel
             ->default()
             ->id('admin')
             ->path('admin')
-            ->brandLogo(asset('assets/logo.png'))
+            ->brandLogo(asset('storage/' . $about->logo))
             ->brandLogoHeight('4rem')
-            ->favicon(asset('assets/logo.png'))
+            ->favicon(asset('storage/' . $about->favicon))
             ->spa()
             ->databaseNotifications()
             ->login()

@@ -69,7 +69,7 @@ class CollectionResource extends Resource
                         ->directory('uploads/images/collections')
                         ->required(),
                     Toggle::make('status')
-                    ->default(true)
+                        ->default(true)
                 ])
                     ->columnSpan(1)
             ])->columns(3);
@@ -102,7 +102,7 @@ class CollectionResource extends Resource
     public static function getRelations(): array
     {
         return [
-            ProductsRelationManager::class
+            //
         ];
     }
 
