@@ -42,7 +42,7 @@
     <div class="header-top bg-gray">
         <div class="container">
             <div class="row align-items-center">
-                <div class="d-none d-lg-block col-lg-6">
+                <div class="d-none d-lg-block col-lg-7">
                     <ul class="nav align-items-center gap-3">
                         @if(isset($contact))
                             <li class="current-wrap">
@@ -61,7 +61,7 @@
                         @endif
                     </ul>
                 </div>
-                <div class="col-lg-6 text-right">
+                <div class="col-lg-5 text-right">
                     <div class="header-top-settings">
                         <ul class="nav align-items-center justify-content-end">
                             <li class="language">
